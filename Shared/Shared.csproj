@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <Nullable>disable</Nullable>
+	  <AssemblyName>Abc.Shared</AssemblyName>
+	  <RootNamespace>Abc.Shared</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\Code\Aids\Aids.csproj" />
+    <ProjectReference Include="..\Code\Data\Data.csproj" />
+    <ProjectReference Include="..\Code\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Code\Infra\Infra.csproj" />
+    <ProjectReference Include="..\Code\Jobs\Jobs.csproj" />
+    <ProjectReference Include="..\Code\Logic\Logic.csproj" />
+  </ItemGroup>
+
+</Project>

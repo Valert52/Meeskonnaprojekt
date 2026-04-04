@@ -1,0 +1,30 @@
+﻿@page "/movies/edit"
+@using Abc.Infra
+@using Microsoft.EntityFrameworkCore
+@inject IMoviesRepo repo
+@inject NavigationManager NavigationManager
+@using Abc.Data
+@using Abc.Shared.Pages
+
+<MyEditPage
+	PageTitleText="Edit Movie"
+	EntityTitle="@movie?.Name"
+	Entity="movie"
+	BasePath="/movies"
+	EntityId="@Id"
+	OnValidSubmit="updateMovie" />
+
+@code {
+	[SupplyParameterFromQuery] private int Id { get; set; }
+	[SupplyParameterFromForm] private Movie movie { get; set; }
+
+	protected override async Task OnInitializedAsync() {
+		movie ??= await repo.GetAsync(Id);
+		if (movie is null) NavigationManager.NavigateTo("/404");
+	}
+
+	private async Task updateMovie() {
+		await repo.UpdateAsync(movie!);
+		NavigationManager.NavigateTo("/movies");
+	}
+}

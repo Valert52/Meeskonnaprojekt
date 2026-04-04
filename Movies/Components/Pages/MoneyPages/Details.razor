@@ -1,0 +1,23 @@
+﻿@page "/monies/details"
+@using Abc.Data
+@using Abc.Infra
+@inject IMoniesRepo repo
+@inject NavigationManager NavigationManager
+@using Abc.Shared.Pages
+
+<MyDetailsPage
+	PageTitleText="Details Money"
+	EntityTitle="Money"
+	Entity="item"
+	EntityId="item?.Id"
+	BasePath="/monies" />
+
+@code {
+	private Money item;
+	[SupplyParameterFromQuery] private int Id { get; set; }
+
+	protected override async Task OnInitializedAsync() {
+		item = await repo.GetAsync(Id);
+		if (item is null) NavigationManager.NavigateTo("/404", true);
+	}
+}

@@ -1,0 +1,23 @@
+﻿@page "/countries"
+@using Abc.Data
+@using Abc.Infra
+@inject NavigationManager NavigationManager
+@inject ICountriesRepo repo
+@using Abc.Shared.Pages
+
+<MyIndexPage
+	TItem="Country"
+	PageTitleText="Countries"
+	EntityTitle="Countries"
+	Items="countries"
+	BasePath="countries">
+</MyIndexPage>
+
+@code {
+	private IQueryable<Country> countries = Enumerable.Empty<Country>().AsQueryable();
+
+	protected override async Task OnInitializedAsync() {
+		if (repo is null) return;
+		countries = (await repo.GetAsync()).AsQueryable();
+	}
+}

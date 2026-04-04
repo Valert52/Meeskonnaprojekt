@@ -1,0 +1,24 @@
+﻿@page "/monies"
+@using Abc.Data
+@using Abc.Infra
+@inject IMoniesRepo repo
+@inject NavigationManager NavigationManager
+@using Abc.Shared.Pages
+
+
+<MyIndexPage
+	TItem="Money"
+	PageTitleText="Monies Index"
+	EntityTitle="Monies"
+	Items="items"
+	BasePath="/monies">
+</MyIndexPage>
+
+@code {
+	private IQueryable<Money> items = Enumerable.Empty<Money>().AsQueryable();
+
+	protected override async Task OnInitializedAsync() {
+		if (repo is null) return;
+		items = (await repo.GetAsync()).AsQueryable();
+	}
+}
