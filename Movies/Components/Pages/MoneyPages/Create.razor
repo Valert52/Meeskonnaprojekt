@@ -5,7 +5,7 @@
 @inject NavigationManager NavigationManager
 @using Abc.Shared.Pages
 
-<MyCreatePage Entity="item" EntityTitle="Money" BasePath="/monies" OnValidSubmit="add" />
+<MyCreatePage Entity="money" EntityTitle="Money" BasePath="/monies" OnValidSubmit="add" />
 
 @code {
 	[SupplyParameterFromForm] private Money money { get; set; } = default!;

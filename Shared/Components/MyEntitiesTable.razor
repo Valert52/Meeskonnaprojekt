@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using System.Reflection
 
-@typeparam TEntity where TEntity : NamedEntity
+@typeparam TEntity where TEntity : BaseEntity
 
 <QuickGrid Class="table" Items="Entities">
 	@foreach (var p in typeof(TEntity).GetProperties()) {
@@ -30,7 +30,7 @@
 
 	private bool show(PropertyInfo p) {
 		if (p is null) return false;
-		if (p.Name == nameof(NamedEntity.Id)) return false;
+		if (p.Name == nameof(BaseEntity.Id)) return false;
 		var t = p.PropertyType;
 		if (t.IsArray) return false;
 		if (t.IsClass && t != typeof(string)) return false;
