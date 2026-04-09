@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Abc.Data.Consultation.BookingPage">
-    <Position X="2" Y="5.25" Width="1.5" />
+    <Position X="2.5" Y="7" Width="1.5" />
     <Members>
       <Property Name="Student" Hidden="true" />
     </Members>
@@ -15,26 +15,19 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Consultation.ConsultationSlot">
-    <Position X="7.25" Y="6.75" Width="2.25" />
+    <Position X="6.5" Y="10.25" Width="2.25" />
     <Members>
       <Property Name="Course" Hidden="true" />
       <Property Name="Lecturer" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAGACAEAAAAAAAAAIAAgCAAIAAgAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAGACAAAAAACAAAAIAggCAAIAAgAAAACAAAAAAAAAA=</HashCode>
       <FileName>Consultation\ConsultationSlot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Course" />
       <Property Name="Lecturer" />
     </ShowAsAssociation>
-  </Class>
-  <Class Name="Abc.Data.Consultation.CoursePage">
-    <Position X="6.5" Y="4.75" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Consultation\Course.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="Abc.Data.Consultation.User">
     <Position X="5.75" Y="1.75" Width="3.5" />
@@ -43,34 +36,8 @@
       <FileName>Consultation\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Abc.Data.Consultation.Student">
-    <Position X="2.25" Y="0.75" Width="1.5" />
-    <Members>
-      <Property Name="Course" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Consultation\Student.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Course" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Abc.Data.Consultation.Lecturer">
-    <Position X="11" Y="1" Width="1.5" />
-    <Members>
-      <Property Name="Course" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Consultation\Lecturer.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Course" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="Abc.Data.Consultation.Notification">
-    <Position X="11.5" Y="6.5" Width="2.5" />
+    <Position X="14.25" Y="8.75" Width="2.5" />
     <Members>
       <Property Name="Lecturer" Hidden="true" />
       <Property Name="Student" Hidden="true" />
@@ -85,63 +52,82 @@
       <Property Name="Lecturer" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Abc.Data.CourseSelector">
-    <Position X="7" Y="3.5" Width="1.5" />
-    <AssociationLine Name="Course" Type="Abc.Data.Consultation.CoursePage" FixedToPoint="true">
+  <Class Name="Abc.Data.Consultation.CourseSelector">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Course" Type="Abc.Data.Consultation.Course" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.812" Y="3.93" />
-        <Point X="7.812" Y="4.25" />
+        <Point X="7.469" Y="5.565" />
+        <Point X="7.469" Y="5.76" />
+        <Point X="7.438" Y="5.76" />
+        <Point X="7.438" Y="6" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAGACAAQAAAAAAAAIAAgAAAAAAAAAAAAAAAAAACAAA=</HashCode>
-      <FileName>CourseSelector.cs</FileName>
+      <FileName>Consultation\CourseSelector.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Course" />
-      <Property Name="Student" />
-      <Property Name="Lecturer" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Abc.Data.Consultation.CourseLecturer">
-    <Position X="13.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAGACAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Consultation\CourseLecturer.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Lecturer" />
-      <Property Name="Course" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Abc.Data.Consultation.CourseStudent">
-    <Position X="0.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAGAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAACAAQ=</HashCode>
-      <FileName>Consultation\CourseStudent.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Student" />
-      <Property Name="Course" />
-      <Property Name="BookingPage" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Abc.Data.Consultation.CreateBooking">
-    <Position X="14.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAIEAAAAAABAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Consultation\CreateBooking.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="CourseLecturer" />
-      <Property Name="Booking" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Abc.Data.Avaleht">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+  <Class Name="Abc.Data.Status">
+    <Position X="2.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Avaleht.cs</FileName>
+      <FileName>Cancellation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.Feedback">
+    <Position X="9" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsultationReview.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.Consultation.Course">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consultation\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.Consultation.Material">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consultation\Material.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.Consultation.CourseMaterial">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consultation\CourseMaterial.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Material" />
+      <Property Name="Course" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Abc.Data.Consultation.Role" Collapsed="true">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consultation\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.Consultation.UserRole">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consultation\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Abc.Data.CourseConsultation">
+    <Position X="6.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CourseConsultation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

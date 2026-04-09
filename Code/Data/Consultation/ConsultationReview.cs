@@ -10,9 +10,9 @@ namespace Abc.Data.Consultation;
         public int Id { get; set; }
     public int ConsultationSlotId { get; set; }
     public int StudentId { get; set; }
-    public CourseStudent CourseStudent { get; set; }
+    //public CourseStudent CourseStudent { get; set; }
     public int LecturerId { get; set; }
-    public CourseLecturer CourseLecturer { get; set; }
+    //public CourseLecturer CourseLecturer { get; set; }
     public string ReviewText { get; set; } = "";
 
 

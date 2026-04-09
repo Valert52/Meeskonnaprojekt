@@ -10,7 +10,7 @@ namespace Abc.Data.Consultation;
     public int StudentId { get; set; }
     public Student Student { get; set; }
     public int CourseId { get; set; }
-    public CoursePage Course { get; set; }
+    public Course Course { get; set; }
     public int LecturerId { get; set; }
     public Lecturer Lecturer { get; set; }
 

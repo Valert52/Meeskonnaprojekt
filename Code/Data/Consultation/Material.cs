@@ -4,4 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abc.Data.Consultation;
+namespace Abc.Data.Consultation
+{
+    public class Material
+    {
+    }
+}

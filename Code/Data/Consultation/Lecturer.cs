@@ -8,5 +8,6 @@ namespace Abc.Data.Consultation;
 public class Lecturer : User
 {
     public int? CourseId { get; set; }
-    public CoursePage Course { get; set; }
+    public Course Course { get; set; }
+    internal Booking CreateBooking { get; set; }
 }
