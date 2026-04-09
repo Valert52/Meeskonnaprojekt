@@ -12,16 +12,11 @@
 	OnValidSubmit="add" />
 
 @code {
-	[SupplyParameterFromQuery] private int Id { get; set; }
-	[SupplyParameterFromForm(Name = nameof(CountryCurrency))] private CountryCurrency item { get; set; }
+	[SupplyParameterFromForm(Name = nameof(CountryCurrency))]
+	private CountryCurrency item { get; set; } = new();
 
-	protected override async Task OnInitializedAsync() {
-		item ??= await repo.GetAsync(Id);
-		if (item is null) NavigationManager.NavigateTo("/404", true);
-	}
-
-	private async Task update() {
-		await repo.UpdateAsync(item!);
+	private async Task add() {
+		await repo.CreateAsync(item);
 		NavigationManager.NavigateTo("/countrycurrencies");
 	}
 }
