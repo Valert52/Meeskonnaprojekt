@@ -87,14 +87,14 @@
   <Class Name="Abc.Data.Consultation.Course">
     <Position X="6.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\Course.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Abc.Data.Consultation.Material">
     <Position X="11.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\Material.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -109,7 +109,7 @@
       <Property Name="Course" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Abc.Data.Consultation.Role" Collapsed="true">
+  <Class Name="Abc.Data.Consultation.Role">
     <Position X="12.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
