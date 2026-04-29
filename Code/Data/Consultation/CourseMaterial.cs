@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abc.Data.Consultation
-{
+namespace Abc.Data.Consultation;
+
     public class CourseMaterial
     {
         public int CourseId { get; set; }
@@ -14,4 +14,4 @@ namespace Abc.Data.Consultation
         public Material Material { get; set; }
         public Course Course { get; set; }
     }
-}
+
