@@ -14,7 +14,7 @@ public class BookingPage
     public string Note { get; set; } = "";
 
     public int? StudentId { get; set; }
-    public Student Student { get; set; }
+    
 
     public int? SlotId { get; set; }
     public ConsultationSlot ConsultationSlot { get; set; }

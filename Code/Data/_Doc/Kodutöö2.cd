@@ -2,15 +2,11 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Abc.Data.Consultation.BookingPage">
     <Position X="2.5" Y="7" Width="1.5" />
-    <Members>
-      <Property Name="Student" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAACQAAEQAABAIAAAAAAAAAAAAAAAAAAAAAAAAECAAA=</HashCode>
+      <HashCode>AAACQAAEAAABAIAAAAAAAAAAAAAAAAAAAAAAAAECAAA=</HashCode>
       <FileName>Consultation\BookingPage.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Student" />
       <Property Name="ConsultationSlot" />
     </ShowAsAssociation>
   </Class>

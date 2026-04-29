@@ -9,5 +9,5 @@ public class Lecturer : User
 {
     public int? CourseId { get; set; }
     public Course Course { get; set; }
-    internal Booking CreateBooking { get; set; }
+    internal BookingPage CreateBooking { get; set; }
 }
