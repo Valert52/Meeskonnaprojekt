@@ -1,27 +1,28 @@
 ﻿using Abc.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Abc.Infra;
 
-public class MoniesRepo(AbcSoftMoviesContext c = null)
-    : EfBaseRepo<AbcSoftMoviesContext, Money>(c), IMoniesRepo
-{ }
-
-public class CountryCurrenciesRepo(AbcSoftMoviesContext c = null)
-    : EfBaseRepo<AbcSoftMoviesContext, CountryCurrency>(c), ICountryCurrenciesRepo
-{ }
 public class MoviesRepo(AbcSoftMoviesContext c = null)
     : EfBaseRepo<AbcSoftMoviesContext, Movie>(c), IMoviesRepo
 { }
-
 public class CurrenciesRepo(AbcSoftMoviesContext c = null)
     : EfBaseRepo<AbcSoftMoviesContext, Currency>(c), ICurrenciesRepo
 { }
-
 public class CountriesRepo(AbcSoftMoviesContext c = null)
     : EfBaseRepo<AbcSoftMoviesContext, Country>(c), ICountriesRepo
+{
+    protected override IQueryable<Country> Query() => db.Countries
+        .Include(x => x.CountryCurrencies)
+        .ThenInclude(x => x.Currency);
+}
+public class MoneyRepo(AbcSoftMoviesContext c = null)
+    : EfBaseRepo<AbcSoftMoviesContext, Money>(c), IMoneyRepo
 { }
+public class CountryCurrenciesRepo(AbcSoftMoviesContext c = null)
+    : EfBaseRepo<AbcSoftMoviesContext, CountryCurrency>(c), ICountryCurrenciesRepo
+{
+    protected override IQueryable<CountryCurrency> Query() => db.CountryCurrencies
+        .Include(x => x.Country)
+        .Include(x => x.Currency);
+}

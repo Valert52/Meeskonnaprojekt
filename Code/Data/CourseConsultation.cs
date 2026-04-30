@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Abc.Data.Consultation;
 
-namespace Abc.Data
+namespace Abc.Data;
+
+public class CourseConsultation
 {
-    public class CourseConsultation
-    {
-        public Code Code { get; set; }
-    }
+    public Guid Id { get; set; }
+
+    public Guid CourseId { get; set; }
+    public Course? Course { get; set; }
 }

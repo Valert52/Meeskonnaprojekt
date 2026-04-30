@@ -5,26 +5,21 @@
 @inject NavigationManager NavigationManager
 @using Abc.Shared.Pages
 
-<MyEditPage
-	PageTitleText="Edit Currency"
-	EntityTitle="@item?.Name"
-	Entity="item"
+<MyEditPage 
+	PageTitleText="Edit Currency" 
+	EntityTitle="@item?.Name" 
+	Entity="item" 
 	BasePath="/currencies"
 	EntityId="@Id"
 	OnValidSubmit="update" />
 
 @code {
-	[SupplyParameterFromQuery] private int Id { get; set; }
+	[SupplyParameterFromQuery] private Guid Id { get; set; }
 	[SupplyParameterFromForm(Name = nameof(Currency))] private Currency item { get; set; }
-
 	protected override async Task OnInitializedAsync() {
 		item ??= await repo.GetAsync(Id);
-		if (item is null) {
-			NavigationManager.NavigateTo("/404", true);
-			return;
-		}
+		if (item is null) NavigationManager.NavigateTo("/404", true);
 	}
-
 	private async Task update() {
 		await repo.UpdateAsync(item!);
 		NavigationManager.NavigateTo("/currencies");

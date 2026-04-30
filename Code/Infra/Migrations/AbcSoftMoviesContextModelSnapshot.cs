@@ -24,26 +24,15 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.Country", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Capital")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCountry")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsLoyaltyProgram")
-                        .HasColumnType("bit");
 
                     b.Property<string>("IsoCode")
                         .HasColumnType("nvarchar(max)");
@@ -78,17 +67,15 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.CountryCurrency", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CurrencyId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("CurrencyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
@@ -115,14 +102,15 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.Currency", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
@@ -158,22 +146,22 @@ namespace Abc.Infra.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CountryId");
+
                     b.ToTable("Currencies");
                 });
 
             modelBuilder.Entity("Abc.Data.Money", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int?>("CurrencyId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("CurrencyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("Timestamp")
                         .IsConcurrencyToken()
@@ -190,22 +178,20 @@ namespace Abc.Infra.Migrations
 
                     b.HasIndex("CurrencyId");
 
-                    b.ToTable("Monies");
+                    b.ToTable("Money");
                 });
 
             modelBuilder.Entity("Abc.Data.Movie", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CountryId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
@@ -213,8 +199,8 @@ namespace Abc.Infra.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MoneyId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("MoneyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -244,17 +230,24 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.CountryCurrency", b =>
                 {
-                    b.HasOne("Abc.Data.Country", null)
-                        .WithMany("Currencies")
+                    b.HasOne("Abc.Data.Country", "Country")
+                        .WithMany("CountryCurrencies")
                         .HasForeignKey("CountryId");
 
                     b.HasOne("Abc.Data.Currency", "Currency")
                         .WithMany()
-                        .HasForeignKey("CurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CurrencyId");
+
+                    b.Navigation("Country");
 
                     b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("Abc.Data.Currency", b =>
+                {
+                    b.HasOne("Abc.Data.Country", null)
+                        .WithMany("Currencies")
+                        .HasForeignKey("CountryId");
                 });
 
             modelBuilder.Entity("Abc.Data.Money", b =>
@@ -283,6 +276,8 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.Country", b =>
                 {
+                    b.Navigation("CountryCurrencies");
+
                     b.Navigation("Currencies");
                 });
 #pragma warning restore 612, 618

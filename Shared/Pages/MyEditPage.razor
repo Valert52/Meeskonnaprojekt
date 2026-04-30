@@ -33,7 +33,7 @@ else
 	[Parameter] public string EntityTitle { get; set; }
 	[Parameter] public object Entity { get; set; }
 	[Parameter] public string BasePath { get; set; }
-	[Parameter] public int? EntityId { get; set; }
+	[Parameter] public Guid? EntityId { get; set; }
 	[Parameter] public EventCallback OnValidSubmit { get; set; }
 
 	private string idField => Entity is null ? "Id" : $"{Entity.GetType().Name}.Id";

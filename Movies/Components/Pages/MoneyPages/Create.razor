@@ -1,17 +1,18 @@
-﻿@page "/monies/create"
+﻿@page "/money/create"
 @using Abc.Data
 @using Abc.Infra
-@inject IMoniesRepo repo
+@inject IMoneyRepo repo
 @inject NavigationManager NavigationManager
 @using Abc.Shared.Pages
 
-<MyCreatePage Entity="money" EntityTitle="Money" BasePath="/monies" OnValidSubmit="add" />
+<MyCreatePage Entity="money" EntityTitle="Money" BasePath="/money" OnValidSubmit="add" />
+
 
 @code {
-	[SupplyParameterFromForm] private Money money { get; set; } = default!;
+	[SupplyParameterFromForm(Name = nameof(Money))] private Money money { get; set; } = default!;
 	protected override void OnInitialized() => money ??= new();
 	private async Task add() {
 		await repo.CreateAsync(money);
-		NavigationManager.NavigateTo("/monies");
+		NavigationManager.NavigateTo("/money");
 	}
 }

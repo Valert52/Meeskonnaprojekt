@@ -10,27 +10,21 @@
 	<MyPropertyViewer Label="Id" Value="@country.Id.ToString()" />
 	<MyPropertyViewer Label="Name" Value="@country.Name" />
 	<MyPropertyViewer Label="Code" Value="@country.Code" />
-	@* <MyEntityViewer Entity="country" /> *@
-</MyDeletePage>
+	@*     <MyEntityViewer Entity="country" />
+ *@
+</MyDeletePage> 
 
 @code {
 	private Country country;
-
-	[SupplyParameterFromQuery]
-	private int Id { get; set; }
-
-	protected override async Task OnInitializedAsync()
-	{
+	[SupplyParameterFromQuery] private Guid Id { get; set; }
+	protected override async Task OnInitializedAsync() {
 		country = await repo.GetAsync(Id);
-		if (country is null)
-		{
+		if (country is null) {
 			NavigationManager.NavigateTo("/404", true);
 			return;
 		}
 	}
-
-	private async Task deleteCountry()
-	{
+	private async Task deleteCountry() {
 		await repo.DeleteAsync(country!.Id);
 		NavigationManager.NavigateTo("/countries");
 	}

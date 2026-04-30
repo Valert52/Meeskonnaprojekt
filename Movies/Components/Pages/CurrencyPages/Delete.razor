@@ -5,16 +5,14 @@
 @inject NavigationManager NavigationManager
 @using Abc.Shared.Pages
 
-<MyDeletePage PageTitleText="Delete Currency"
-              EntityTitle="Currency"
-              Entity="item"
-              BasePath="/currencies"
-              OnValidSubmit="delete" />
+<MyDeletePage PageTitleText="Delete Currency" 
+              EntityTitle="Currency" 
+              Entity="item" 
+              BasePath="/currencies" OnValidSubmit="delete" />
 
 @code {
 	private Currency item;
-	[SupplyParameterFromQuery] private int Id { get; set; }
-
+	[SupplyParameterFromQuery] private Guid Id { get; set; }
 	protected override async Task OnInitializedAsync() {
 		item = await repo.GetAsync(Id);
 		if (item is null) {
@@ -22,7 +20,6 @@
 			return;
 		}
 	}
-
 	private async Task delete() {
 		await repo.DeleteAsync(item!.Id);
 		NavigationManager.NavigateTo("/currencies");

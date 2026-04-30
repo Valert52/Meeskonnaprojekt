@@ -9,17 +9,9 @@
 	TItem="Movie"
 	PageTitleText="Movies Page"
 	EntityTitle="Movies"
-	Items="movies"
+	Repo="repo"
 	BasePath="movies">
 </MyIndexPage>
 
 @code {
-	private IQueryable<Movie> movies = Enumerable.Empty<Movie>().AsQueryable();
-
-	protected override async Task OnInitializedAsync()
-	{
-		if (repo is null) return;
-		movies = (await repo.GetAsync()).AsQueryable();
-	}
-
 }

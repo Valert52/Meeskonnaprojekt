@@ -1,7 +1,7 @@
-﻿@page "/monies/details"
+﻿@page "/money/details"
 @using Abc.Data
 @using Abc.Infra
-@inject IMoniesRepo repo
+@inject IMoneyRepo repo
 @inject NavigationManager NavigationManager
 @using Abc.Shared.Pages
 
@@ -10,12 +10,11 @@
 	EntityTitle="Money"
 	Entity="item"
 	EntityId="item?.Id"
-	BasePath="/monies" />
+	BasePath="/money" />
 
 @code {
 	private Money item;
-	[SupplyParameterFromQuery] private int Id { get; set; }
-
+	[SupplyParameterFromQuery] private Guid Id { get; set; }
 	protected override async Task OnInitializedAsync() {
 		item = await repo.GetAsync(Id);
 		if (item is null) NavigationManager.NavigateTo("/404", true);
