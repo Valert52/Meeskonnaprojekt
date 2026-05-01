@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
@@ -45,6 +45,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aids", "Abc.Tests.Aids\Aids.csproj", "{799E23E5-6351-4664-9441-F8AA1E578A8B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Meeskonnaprojekt", "Meeskonnaprojekt", "{31DF3F40-81C4-4478-939E-1290B56B80AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsApp", "ConsApp\ConsApp\ConsApp.csproj", "{A68D80DA-8434-4FF3-861E-DC026E44150C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsApp.Client", "ConsApp\ConsApp.Client\ConsApp.Client.csproj", "{183C4275-F5B2-47D4-9F93-D400E9C1F3DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +112,14 @@ Global
 		{799E23E5-6351-4664-9441-F8AA1E578A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799E23E5-6351-4664-9441-F8AA1E578A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{799E23E5-6351-4664-9441-F8AA1E578A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68D80DA-8434-4FF3-861E-DC026E44150C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68D80DA-8434-4FF3-861E-DC026E44150C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68D80DA-8434-4FF3-861E-DC026E44150C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68D80DA-8434-4FF3-861E-DC026E44150C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183C4275-F5B2-47D4-9F93-D400E9C1F3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183C4275-F5B2-47D4-9F93-D400E9C1F3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183C4275-F5B2-47D4-9F93-D400E9C1F3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183C4275-F5B2-47D4-9F93-D400E9C1F3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +142,8 @@ Global
 		{411A7BA9-6CF9-A22F-ABBB-7ACE0F10E7B4} = {45F4668C-4037-4B0F-9CED-B5F782454D11}
 		{799E23E5-6351-4664-9441-F8AA1E578A8B} = {45F4668C-4037-4B0F-9CED-B5F782454D11}
 		{31DF3F40-81C4-4478-939E-1290B56B80AA} = {A1BF1C27-137F-4C28-88B3-BFF5E13BB113}
+		{A68D80DA-8434-4FF3-861E-DC026E44150C} = {31DF3F40-81C4-4478-939E-1290B56B80AA}
+		{183C4275-F5B2-47D4-9F93-D400E9C1F3DB} = {31DF3F40-81C4-4478-939E-1290B56B80AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E33F8AB4-309B-42D0-8D0A-D007A9B32B56}
