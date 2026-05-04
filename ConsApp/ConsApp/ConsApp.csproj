@@ -18,4 +18,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\Pages\CoursePages\" />
+    <Folder Include="Components\Pages\MaterialPages\" />
+    <Folder Include="Components\Pages\CourseMaterialPages\" />
+  </ItemGroup>
+
 </Project>
