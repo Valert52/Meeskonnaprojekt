@@ -1,4 +1,5 @@
-﻿namespace Abc.Data.Consultation;
+﻿using Abc.Data.Common;
+namespace Abc.Data.Consultation;
 public class Course//: BaseEntity
 {
     public string Name { get; set; } = "";
