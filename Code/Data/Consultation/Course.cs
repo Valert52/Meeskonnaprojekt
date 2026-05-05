@@ -1,6 +1,6 @@
 ﻿using Abc.Data.Common;
 namespace Abc.Data.Consultation;
-public class Course//: BaseEntity
+public class Course: NamedEntity
 {
     public string Name { get; set; } = "";
     public string Id { get; set; } = "";
