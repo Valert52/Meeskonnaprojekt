@@ -1,0 +1,36 @@
+﻿@page "/roles/create"
+@attribute [ExcludeFromInteractiveRouting]
+@using Abc.Data.Consultation
+@using ConsApp.Data
+
+@inject ApplicationDbContext Context
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create Role</PageTitle>
+
+<h1>Create Role</h1>
+
+<EditForm Model="role" OnValidSubmit="CreateRole">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <InputText class="form-control" @bind-Value="role.Name" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a href="/roles" class="btn btn-secondary">Back</a>
+</EditForm>
+
+@code {
+    private Role role = new();
+
+    private async Task CreateRole()
+    {
+        Context.ConsultationRoles.Add(role);
+        await Context.SaveChangesAsync();
+
+        NavigationManager.NavigateTo("/roles");
+    }
+}

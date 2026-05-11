@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Abc.Data.Common;
 
-namespace Abc.Data.Consultation
+namespace Abc.Data.Consultation;
+
+public sealed class UserRole : BaseEntity
 {
-    public  class UserRole
-    {
-        public string Name { get; set; } = "";
-    }
+    public string UserId { get; set; } = string.Empty;
+    public string RoleId { get; set; } = string.Empty;
 }

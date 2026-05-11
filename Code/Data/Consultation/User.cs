@@ -1,11 +1,8 @@
-﻿
-
-using Abc.Data.Common;
+﻿using Abc.Data.Common;
 
 namespace Abc.Data.Consultation;
-public class User
+
+public class User : NamedEntity
 {
-    public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public string Email { get; set; } = "";
+    public string Email { get; set; } = string.Empty;
 }

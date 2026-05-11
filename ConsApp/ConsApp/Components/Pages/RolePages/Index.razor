@@ -1,0 +1,46 @@
+﻿@page "/roles"
+@attribute [ExcludeFromInteractiveRouting]
+
+@using Abc.Data.Consultation
+@using ConsApp.Data
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationDbContext Context
+
+<PageTitle>Roles</PageTitle>
+
+<h1>Roles</h1>
+
+<p>
+    <a href="/roles/create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var role in roles)
+    {
+        <tr>
+            <td>@role.Name</td>
+            <td>
+                <a href="@($"/roles/details?id={role.Id}")">Details</a> |
+                <a href="@($"/roles/edit?id={role.Id}")">Edit</a> |
+                <a href="@($"/roles/delete?id={role.Id}")">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    private List<Role> roles = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        roles = await Context.ConsultationRoles.ToListAsync();
+    }
+}
