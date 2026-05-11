@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Abc.Data
+namespace Abc.Data.Consultation
 {
     public class Status
     {

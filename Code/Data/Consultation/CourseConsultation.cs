@@ -1,12 +1,11 @@
 ﻿using System;
-using Abc.Data.Consultation;
 
-namespace Abc.Data;
+namespace Abc.Data.Consultation;
 
 public class CourseConsultation
 {
     public Guid Id { get; set; }
 
     public Guid CourseId { get; set; }
-    public Course? Course { get; set; }
+    public Course Course { get; set; }
 }
