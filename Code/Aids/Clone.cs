@@ -30,3 +30,4 @@ public static class Clone {
     private static bool isClass(PropertyInfo p)
         => p.PropertyType.IsClass && p.PropertyType != typeof(string);
 }
+//
