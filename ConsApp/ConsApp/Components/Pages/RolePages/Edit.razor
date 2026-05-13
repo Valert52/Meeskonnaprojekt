@@ -35,11 +35,11 @@ else
     private Role? role;
 
     [SupplyParameterFromQuery]
-    private Guid Id { get; set; }
+    private int Id { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        if (Id == Guid.Empty)
+        if (Id == 0)
         {
             NavigationManager.NavigateTo("/roles");
             return;
