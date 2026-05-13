@@ -7,11 +7,7 @@ namespace Abc.Data.Consultation;
     public class CourseSelector
     {
     public int Id { get; set; }
-    public int StudentId { get; set; }
-    public Student Student { get; set; }
     public int CourseId { get; set; }
-    public Course Course { get; set; }
-    public int LecturerId { get; set; }
-    public Lecturer Lecturer { get; set; }
-
+    public string LecturerId { get; set; } = string.Empty;
+    public string StudentId { get; set; } = string.Empty;
 }

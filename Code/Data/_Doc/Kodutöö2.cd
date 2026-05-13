@@ -3,68 +3,43 @@
   <Class Name="Abc.Data.Consultation.BookingPage">
     <Position X="2.5" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACQAAEAAABAIAAAAAAAAAAAAAAAAAAAAAAAAECAAA=</HashCode>
+      <HashCode>AAACQAAEAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAECAAA=</HashCode>
       <FileName>Consultation\BookingPage.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ConsultationSlot" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Consultation.ConsultationSlot">
     <Position X="6.5" Y="10.25" Width="2.25" />
     <Members>
-      <Property Name="Course" Hidden="true" />
-      <Property Name="Lecturer" Hidden="true" />
+      <Property Name="CourseId" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAGACAAAAAACAAAAIAggCAAIAAgAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAGAAAAAAAAAIAAAAAAgCAAIAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\ConsultationSlot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Course" />
-      <Property Name="Lecturer" />
+      <Property Name="CourseId" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Consultation.User">
     <Position X="5.75" Y="1.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Abc.Data.Consultation.Notification">
     <Position X="14.25" Y="8.75" Width="2.5" />
-    <Members>
-      <Property Name="Lecturer" Hidden="true" />
-      <Property Name="Student" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAACACAEQAABAAAAACAAgAAAAACAAAAAAAAAIAACAAA=</HashCode>
+      <HashCode>AAACAAAEAAAAAAAAACAAgAAAAACAAAAAAAAAIAACAAA=</HashCode>
       <FileName>Consultation\Notification.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ConsultationSlot" />
-      <Property Name="Student" />
-      <Property Name="Lecturer" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Consultation.CourseSelector">
     <Position X="6.75" Y="3.5" Width="1.5" />
-    <AssociationLine Name="Course" Type="Abc.Data.Consultation.Course" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.469" Y="5.565" />
-        <Point X="7.469" Y="5.76" />
-        <Point X="7.438" Y="5.76" />
-        <Point X="7.438" Y="6" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAGACAAQAAAAAAAAIAAgAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Consultation\CourseSelector.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Course" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Status">
     <Position X="2.75" Y="12.75" Width="1.5" />
@@ -90,25 +65,21 @@
   <Class Name="Abc.Data.Consultation.CourseMaterial">
     <Position X="9.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAEAAAAAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAGAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\CourseMaterial.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Material" />
-      <Property Name="Course" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Abc.Data.Consultation.Role">
     <Position X="12.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\Role.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Abc.Data.Consultation.UserRole">
     <Position X="10.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\UserRole.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Abc.Data.Consultation;
 public class Lecturer : User
 {
-    public int? CourseId { get; set; }
-    public Course Course { get; set; }
-    internal BookingPage CreateBooking { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Department { get; set; } = string.Empty;
 }
