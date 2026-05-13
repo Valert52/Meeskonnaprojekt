@@ -28,7 +28,7 @@
   <Class Name="Abc.Data.Consultation.User">
     <Position X="5.75" Y="1.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\User.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,13 +73,6 @@
       <FileName>Cancellation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Abc.Data.Feedback">
-    <Position X="9" Y="8.25" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ConsultationReview.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Abc.Data.Consultation.Course">
     <Position X="6.75" Y="6" Width="1.5" />
     <TypeIdentifier>
@@ -115,7 +108,7 @@
   <Class Name="Abc.Data.Consultation.UserRole">
     <Position X="10.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Consultation\UserRole.cs</FileName>
     </TypeIdentifier>
   </Class>
